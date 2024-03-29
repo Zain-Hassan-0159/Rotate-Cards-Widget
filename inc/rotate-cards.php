@@ -254,6 +254,29 @@ class hz_Rotate_Cards extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
+			'face_title_align',
+			[
+				'label' => esc_html__( 'Alignment', 'hz-widgets' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => esc_html__( 'Left', 'hz-widgets' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'hz-widgets' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'right',
+				'toggle' => true,
+				'selectors' => [
+					'{{WRAPPER}} .text-vertical' => 'float: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
 			'face_title_color',
 			[
 				'label' => esc_html__( 'Title Color', 'hz-widgets' ),
@@ -330,6 +353,33 @@ class hz_Rotate_Cards extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .services .square2 a' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'content_align',
+			[
+				'label' => esc_html__( 'Alignment', 'hz-widgets' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => esc_html__( 'Left', 'hz-widgets' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'hz-widgets' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'hz-widgets' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'left',
+				'toggle' => true,
+				'selectors' => [
+					'{{WRAPPER}} .square-container2' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
